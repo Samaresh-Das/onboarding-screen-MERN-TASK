@@ -29,8 +29,8 @@ const Table = () => {
             </tr>
           </thead>
           {users.length > 0 &&
-            users.map((user) => (
-              <TableJsx email={user.email} name={user.name} />
+            users.map((user, i) => (
+              <TableJsx email={user.email} name={user.name} key={i} />
             ))}
         </table>
       </div>

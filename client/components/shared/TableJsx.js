@@ -1,8 +1,8 @@
 import React from "react";
 
-const TableJsx = ({ name, email }) => {
+const TableJsx = ({ name, email, key }) => {
   return (
-    <tbody>
+    <tbody key={key}>
       <tr class="bg-white border-b  dark:border-gray-700">
         <th
           scope="row"

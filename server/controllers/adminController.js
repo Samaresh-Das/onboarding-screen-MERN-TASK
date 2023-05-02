@@ -4,6 +4,9 @@ const ImageLink = require("../models/imagePath");
 const ButtonText = require("../models/button-text");
 const { validationResult } = require("express-validator");
 
+const linkSite = "https://onboarding-task.onrender.com/";
+//http://localhost:8080/
+
 const getAdminData = async (req, res, next) => {
   let fileUrl = await ImageLink.findOne();
   let buttonText = await ButtonText.findOne();
@@ -26,7 +29,7 @@ const adminUpdateForm = async (req, res, next) => {
   let result;
   let deletedImage;
   if (req.file) {
-    fileUrl = "http://localhost:8080/" + req.file.path.replace(/\\/g, "/");
+    fileUrl = linkSite + req.file.path.replace(/\\/g, "/");
 
     deletedImage = await ImageLink.findOneAndDelete();
     // delete the previous URL (if any)
